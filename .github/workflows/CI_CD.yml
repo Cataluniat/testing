@@ -27,5 +27,7 @@ jobs:
             git reset --hard origin/master &&
             git pull origin master &&
             cd app &&
+            sudo pipenv --python /usr/bin/python3 &&
+            sudo pipenv shell &&
             python manage.py runserver 0.0.0.0:8000 
           '

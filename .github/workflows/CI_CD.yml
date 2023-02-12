@@ -22,11 +22,15 @@ jobs:
           
             #Now we have got the access of EC2 and we will start the deploy .
 
-            mkdir 2 
-            cd /home/ubuntu/CounterApp &&
-            git checkout master &&
-            git fetch --all &&
-            git reset --hard origin/master &&
-            git pull origin master &&
-            docker-compose -f docker-compose.prod.yml up -d --build 
+            sudo apt install python3
+            sudo pip install pipenv
+            sudo pip3 install pipenv
+            git init
+            git clone https://github.com/cataluniat/django-crud-project 
+            cd /django-crud-project
+            sudo pipenv --python /usr/bin/python3
+            sudo pipenv install
+            sudo pipenv shell
+            cd app
+            python manage.py runserver 
           '

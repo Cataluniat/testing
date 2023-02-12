@@ -21,16 +21,11 @@ jobs:
           ssh -o StrictHostKeyChecking=no -i private_key ${USER_NAME}@${HOSTNAME} '
           
             #Now we have got the access of EC2 and we will start the deploy .
-
-            sudo apt install python3
-            sudo pip install pipenv
-            sudo pip3 install pipenv
-            git init
-            git clone https://github.com/cataluniat/django-crud-project 
-            cd django-crud-project
-            sudo pipenv --python /usr/bin/python3
-            sudo pipenv install
-            sudo pipenv shell
-            cd app
-            python manage.py runserver 
+            cd /home/ubuntu/django-crud-project &&
+            git checkout master &&
+            git fetch --all &&
+            git reset --hard origin/master &&
+            git pull origin master &&
+            cd app &&
+            python manage.py runserver 0.0.0.0:8000 
           '

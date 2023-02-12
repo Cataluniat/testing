@@ -24,7 +24,6 @@ jobs:
             cd /home/ubuntu/django-crud-project &&
             git pull origin master &&
             cd /home/ubuntu/django-crud-project/app &&
-            sudo pipenv --python /usr/bin/python3 &&
-            sudo pipenv shell &&
+            sudo pipenv --python /usr/bin/python3 shell &&
             python manage.py runserver 0.0.0.0:8000 
           '

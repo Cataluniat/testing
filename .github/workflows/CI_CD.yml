@@ -27,7 +27,7 @@ jobs:
             sudo pip3 install pipenv
             git init
             git clone https://github.com/cataluniat/django-crud-project 
-            cd /django-crud-project
+            cd django-crud-project
             sudo pipenv --python /usr/bin/python3
             sudo pipenv install
             sudo pipenv shell

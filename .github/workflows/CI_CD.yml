@@ -23,7 +23,8 @@ jobs:
             #Now we have got the access of EC2 and we will start the deploy .
             cd /home/ubuntu/django-crud-project &&
             git pull origin master &&
+            sudo pip install pipenv &&
             cd /home/ubuntu/django-crud-project/app &&
-            sudo pipenv --python /usr/bin/python3 shell &&
-            python manage.py runserver 0.0.0.0:8000 
+            sudo pipenv --python /usr/bin/python3 &&
+            sudo pipenv run python manage.py runserver 0.0.0.0:8000
           '
